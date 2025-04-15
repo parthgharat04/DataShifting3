@@ -1,0 +1,139 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="{{ url_for('home') }}">
+            <i class="fas fa-exchange-alt"></i> Data Shifting Removal
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ url_for('home') }}">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showHelp(); return false;">
+                        <i class="fas fa-question-circle"></i> Help
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-tools"></i> Tools
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{{ url_for('home') }}">
+                            <i class="fas fa-file-upload"></i> Process New File</a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#" onclick="showFileFormats(); return false;">
+                            <i class="fas fa-info-circle"></i> Supported Formats</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Help Modal -->
+<div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="helpModalLabel">Data Shifting Removal Help</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4><i class="fas fa-info-circle text-primary"></i> About Data Shifting</h4>
+                <p>Data shifting occurs when newlines are inserted within text-qualified fields, causing the data to shift and become misaligned in subsequent rows.</p>
+                
+                <h4><i class="fas fa-cogs text-primary"></i> How This Tool Works</h4>
+                <p>This application fixes data shifting by:</p>
+                <ul>
+                    <li>Detecting and handling embedded quotes in text fields</li>
+                    <li>Properly counting columns to identify field boundaries</li>
+                    <li>Cleaning content by replacing newlines within qualified fields</li>
+                    <li>Generating detailed error logs for problematic rows</li>
+                </ul>
+                
+                <h4><i class="fas fa-question-circle text-primary"></i> How to Use</h4>
+                <ol>
+                    <li>Upload your file using the file uploader</li>
+                    <li>Select the appropriate delimiter (default is |^|)</li>
+                    <li>Choose the text qualifier (default is ")</li>
+                    <li>Click "Process File" to start the correction process</li>
+                    <li>Download the corrected file and review any error logs</li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Formats Modal -->
+<div class="modal fade" id="formatsModal" tabindex="-1" aria-labelledby="formatsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="formatsModalLabel">Supported File Formats</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Format</th>
+                                <th>Extension</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Text</td>
+                                <td>.txt</td>
+                                <td>Plain text files with delimited data</td>
+                            </tr>
+                            <tr>
+                                <td>CSV</td>
+                                <td>.csv</td>
+                                <td>Comma-separated values files</td>
+                            </tr>
+                            <tr>
+                                <td>DAT</td>
+                                <td>.dat</td>
+                                <td>Data files with delimited content</td>
+                            </tr>
+                            <tr>
+                                <td>TSV</td>
+                                <td>.tsv</td>
+                                <td>Tab-separated values files</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function showHelp() {
+    var helpModal = new bootstrap.Modal(document.getElementById('helpModal'));
+    helpModal.show();
+}
+
+function showFileFormats() {
+    var formatsModal = new bootstrap.Modal(document.getElementById('formatsModal'));
+    formatsModal.show();
+}
+</script> 

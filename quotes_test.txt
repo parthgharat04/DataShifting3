@@ -1,0 +1,7 @@
+ID|^|Description|^|Status
+"1"|^|"ADB will apply SSL Certificates for WGU Complio "Splash pages""|^|"Paid"
+"2"|^|"CAP-GOWN PKG ULTRA NAVY 57""|^|"Paid"
+"Value1"|^|"ADB will apply SSL Certificates for WGU Complio "Splash pages""|^|"Regular value"|^|"End value"
+"Value2"|^|"CAP-GOWN PKG ULTRA NAVY 57""|^|"Another value"|^|"End value"
+"Value3"|^|"This is a "quoted" phrase inside a field"|^|"Regular value"|^|"End value"
+"Value4"|^|"This is a 42" monitor description"|^|"Regular value"|^|"End value" 

@@ -1,0 +1,9 @@
+DATA SHIFTING CORRECTION ERROR LOG
+==================================================
+
+Fixed multi-line transaction at lines 4-6:
+Line 4: "SU-1009523"|^|""|^|"United States of America"|^|"IL"|^|"Chicago"|^|"60678-1352"|^|""|^|""|^|"SUPPLIER_INVOICE_LINE-3-441815"|^|"2025-02-05-08:00"|^|"1"|^|"Each"|^|"PO-100033182 - Line 23"|^|""|^|"WGU Corporation"|^|"WGUCORP"|^|"Managed"|^|"Administration"|^|"1115 Facilities Management"|^|"DG Investment Intermediate Holdings 2, Inc"|^|"PO-100033182"|^|"2024-10-25T14:48:53.488-07:00"|^|"Approved"|^|"Benjamin Shaw (430683)"|^|"2025-02-03T13:22:19.977-08:00"|^|"2025-01-01-08:00"|^|"SI-1129445"|^|"IN00269189"|^|"2024-11-22-08:00"|^|"Gunnebo single lane dual-pedestal SpeedStile
+Line 5: turnstile w/ full height barrier, flush-mount cardin/
+Line 6: card-out w/ QR reader prep."|^|""|^|"Security Equipment (cameras, readers, cards, etc)"|^|"74666.66"|^|"0"|^|"0"|^|"0"|^|""|^|""|^|""|^|""|^|""|^|""|^|""|^|""|^|"107285.65"|^|"Paid"
+Combined into: "SU-1009523"|^|""|^|"United States of America"|^|"IL"|^|"Chicago"|^|"60678-1352"|^|""|^|""|^|"SUPPLIER_INVOICE_LINE-3-441815"|^|"2025-02-05-08:00"|^|"1"|^|"Each"|^|"PO-100033182 - Line 23"|^|""|^|"WGU Corporation"|^|"WGUCORP"|^|"Managed"|^|"Administration"|^|"1115 Facilities Management"|^|"DG Investment Intermediate Holdings 2, Inc"|^|"PO-100033182"|^|"2024-10-25T14:48:53.488-07:00"|^|"Approved"|^|"Benjamin Shaw (430683)"|^|"2025-02-03T13:22:19.977-08:00"|^|"2025-01-01-08:00"|^|"SI-1129445"|^|"IN00269189"|^|"2024-11-22-08:00"|^|"Gunnebo single lane dual-pedestal SpeedStile turnstile w/ full height barrier, flush-mount cardin/ card-out w/ QR reader prep."|^|""|^|"Security Equipment (cameras, readers, cards, etc)"|^|"74666.66"|^|"0"|^|"0"|^|"0"|^|""|^|""|^|""|^|""|^|""|^|""|^|""|^|""|^|"107285.65"|^|"Paid"
+--------------------------------------------------

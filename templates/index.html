@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Shifting Removal Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ custom_css }}" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #64748b;
+            --success-color: #22c55e;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --background-color: #f1f5f9;
+            --card-background: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            padding-top: 40px;
+            padding-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .header {
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+            border-radius: 2px;
+        }
+
+        .header h1 {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+        }
+
+        .header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+            padding: 30px;
+            border: none;
+            border-radius: 16px;
+            background-color: var(--card-background);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--primary-hover));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .form-section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-section:hover::before {
+            opacity: 1;
+        }
+
+        .form-section h3 {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-section h3 i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .form-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 6px;
+        }
+
+        .form-control, .form-select {
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            padding: 12px 16px;
+            transition: all 0.2s ease;
+            background-color: var(--card-background);
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-check {
+            margin-bottom: 15px;
+            padding-left: 35px;
+        }
+
+        .form-check-input {
+            width: 20px;
+            height: 20px;
+            margin-left: -35px;
+        }
+
+        .form-check-label {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .custom-input {
+            display: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 14px 35px;
+            font-weight: 500;
+            border-radius: 10px;
+            transition: all 0.2s ease;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary i {
+            font-size: 1.2rem;
+        }
+
+        .alert {
+            border-radius: 12px;
+            border: none;
+            padding: 16px 24px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .alert-warning {
+            background-color: #fef3c7;
+            color: #92400e;
+            border-left: 4px solid var(--warning-color);
+        }
+
+        .file-upload-container {
+            border: 2px dashed var(--border-color);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            background-color: var(--background-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .file-upload-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(37, 99, 235, 0.05), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .file-upload-container:hover {
+            border-color: var(--primary-color);
+            background-color: #f8fafc;
+        }
+
+        .file-upload-container:hover::before {
+            transform: translateX(100%);
+        }
+
+        .file-upload-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .file-upload-container:hover .file-upload-icon {
+            transform: scale(1.1);
+        }
+
+        .ms-4 {
+            margin-left: 1.5rem !important;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .form-section {
+                padding: 20px;
+            }
+            .file-upload-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    {{ navbar|safe }}
+    
+    <div class="container main-container">
+        <div class="header">
+            <h1>Data Shifting Removal Application</h1>
+            <p class="lead">Efficiently fix data shifting issues in your text files with our enterprise-grade solution</p>
+        </div>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <div class="row">
+            <div class="col-md-12">
+                <form method="POST" enctype="multipart/form-data">
+                    <!-- File Upload Section -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-file-upload"></i> Select Input File</h3>
+                        <div class="file-upload-container" onclick="document.getElementById('file').click()">
+                            <div class="file-upload-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <label for="file" class="form-label">Click to choose a file or drag and drop</label>
+                            <input type="file" class="form-control" id="file" name="file" required style="display: none;">
+                            <div class="form-text">Supported file types: .txt, .csv, .dat, .tsv</div>
+                        </div>
+                    </div>
+
+                    <!-- Delimiter Section -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-columns"></i> Select Delimiter</h3>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="delimiter_option" id="standard_delimiter_option" value="standard" checked onchange="toggleDelimiterInput()">
+                                <label class="form-check-label" for="standard_delimiter_option">
+                                    Standard Delimiter
+                                </label>
+                            </div>
+                            <div class="ms-4 mb-3">
+                                <select class="form-select" id="standard_delimiter" name="standard_delimiter">
+                                    <option value="|^|">|^| (pipe-caret-pipe)</option>
+                                    <option value=",">Comma (,)</option>
+                                    <option value="|">Pipe (|)</option>
+                                    <option value="\t">Tab</option>
+                                    <option value=";">Semicolon (;)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="delimiter_option" id="custom_delimiter_option" value="custom" onchange="toggleDelimiterInput()">
+                                <label class="form-check-label" for="custom_delimiter_option">
+                                    Custom Delimiter
+                                </label>
+                            </div>
+                            <div class="ms-4 mb-3 custom-input" id="custom_delimiter_container">
+                                <input type="text" class="form-control" id="custom_delimiter" name="custom_delimiter" placeholder="Enter custom delimiter">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Text Qualifier Section -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-quote-right"></i> Select Text Qualifier</h3>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="qualifier_option" id="standard_qualifier_option" value="standard" checked onchange="toggleQualifierInput()">
+                                <label class="form-check-label" for="standard_qualifier_option">
+                                    Standard Text Qualifier
+                                </label>
+                            </div>
+                            <div class="ms-4 mb-3">
+                                <select class="form-select" id="standard_qualifier" name="standard_qualifier">
+                                    <option value='"'>Double Quote (")</option>
+                                    <option value="'">Single Quote (')</option>
+                                </select>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="qualifier_option" id="custom_qualifier_option" value="custom" onchange="toggleQualifierInput()">
+                                <label class="form-check-label" for="custom_qualifier_option">
+                                    Custom Text Qualifier
+                                </label>
+                            </div>
+                            <div class="ms-4 mb-3 custom-input" id="custom_qualifier_container">
+                                <input type="text" class="form-control" id="custom_qualifier" name="custom_qualifier" placeholder="Enter custom text qualifier">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-cogs"></i> Process File
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleDelimiterInput() {
+            const standardOption = document.getElementById('standard_delimiter_option');
+            const standardContainer = document.getElementById('standard_delimiter');
+            const customContainer = document.getElementById('custom_delimiter_container');
+            
+            if (standardOption.checked) {
+                customContainer.style.display = 'none';
+                standardContainer.disabled = false;
+            } else {
+                customContainer.style.display = 'block';
+                standardContainer.disabled = true;
+            }
+        }
+
+        function toggleQualifierInput() {
+            const standardOption = document.getElementById('standard_qualifier_option');
+            const standardContainer = document.getElementById('standard_qualifier');
+            const customContainer = document.getElementById('custom_qualifier_container');
+            
+            if (standardOption.checked) {
+                customContainer.style.display = 'none';
+                standardContainer.disabled = false;
+            } else {
+                customContainer.style.display = 'block';
+                standardContainer.disabled = true;
+            }
+        }
+
+        // Initialize form state
+        toggleDelimiterInput();
+        toggleQualifierInput();
+
+        // Handle file input change
+        document.getElementById('file').addEventListener('change', function(e) {
+            const fileName = e.target.files[0]?.name;
+            if (fileName) {
+                const container = document.querySelector('.file-upload-container');
+                container.querySelector('.form-label').textContent = `Selected file: ${fileName}`;
+            }
+        });
+
+        // Handle drag and drop
+        const fileUploadContainer = document.querySelector('.file-upload-container');
+        const fileInput = document.getElementById('file');
+
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            fileUploadContainer.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            fileUploadContainer.addEventListener(eventName, highlight, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            fileUploadContainer.addEventListener(eventName, unhighlight, false);
+        });
+
+        function highlight(e) {
+            fileUploadContainer.classList.add('highlight');
+        }
+
+        function unhighlight(e) {
+            fileUploadContainer.classList.remove('highlight');
+        }
+
+        fileUploadContainer.addEventListener('drop', handleDrop, false);
+
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            fileInput.files = files;
+            
+            const fileName = files[0]?.name;
+            if (fileName) {
+                const container = document.querySelector('.file-upload-container');
+                container.querySelector('.form-label').textContent = `Selected file: ${fileName}`;
+            }
+        }
+    </script>
+    
+    {{ custom_scripts|safe }}
+</body>
+</html> 

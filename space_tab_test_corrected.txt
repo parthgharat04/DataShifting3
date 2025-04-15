@@ -1,0 +1,5 @@
+Column1|^|Column2|^|Column3|^|Column4
+"Value1"|^|"This has multiple spaces"|^|"Regular value"|^|"End value"
+"Value2"|^|"Regular value"|^|"This has tabs in it"|^|"End value"
+"Value3"|^|"This has both spaces and tabs mixed together"|^|"Another value with tabs"|^|"End value"
+"Value4"|^|"This is a normal value"|^|"Another normal value"|^|"Multiple spaces at end"

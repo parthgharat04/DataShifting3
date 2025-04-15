@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Shifting Removal Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ custom_css }}" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #64748b;
+            --success-color: #22c55e;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --background-color: #f1f5f9;
+            --card-background: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            padding-top: 40px;
+            padding-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .header {
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+            border-radius: 2px;
+        }
+
+        .header h1 {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+        }
+
+        .header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .results-section {
+            margin-bottom: 30px;
+            padding: 30px;
+            border: none;
+            border-radius: 16px;
+            background-color: var(--card-background);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .results-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--primary-hover));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .results-section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .results-section:hover::before {
+            opacity: 1;
+        }
+
+        .results-section h3 {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .results-section h3 i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .file-info {
+            padding: 20px;
+            margin-bottom: 25px;
+            background-color: var(--background-color);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .file-info i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .file-info p {
+            margin: 0;
+            color: var(--text-primary);
+        }
+
+        .file-info strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .table {
+            margin-top: 25px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .table th {
+            font-weight: 600;
+            color: var(--text-primary);
+            border-top: none;
+            background-color: var(--background-color);
+            padding: 15px 20px;
+        }
+
+        .table td {
+            color: var(--text-secondary);
+            vertical-align: middle;
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: var(--background-color);
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            border: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: #475569;
+            transform: translateY(-1px);
+        }
+
+        .btn-warning {
+            background-color: var(--warning-color);
+            border: none;
+            color: var(--text-primary);
+        }
+
+        .btn-warning:hover {
+            background-color: #d97706;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+
+        .alert {
+            border-radius: 12px;
+            border: none;
+            padding: 20px;
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .alert-success {
+            background-color: #dcfce7;
+            color: #166534;
+            border-left: 4px solid var(--success-color);
+        }
+
+        .status-icon {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .results-section {
+                padding: 20px;
+            }
+            .file-info {
+                padding: 15px;
+            }
+            .table td, .table th {
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    {{ navbar|safe }}
+    
+    <div class="container main-container">
+        <div class="header">
+            <h1>Data Shifting Removal Results</h1>
+            <p class="lead">Your file has been successfully processed with enterprise-grade precision</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="results-section">
+                    <h3><i class="fas fa-file-alt"></i> Processing Summary</h3>
+                    <div class="file-info">
+                        <i class="fas fa-file-upload"></i>
+                        <p><strong>Input File:</strong> {{ input_file }}</p>
+                    </div>
+                    
+                    <h4 class="mt-4"><i class="fas fa-folder-open"></i> Generated Files</h4>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>File Type</th>
+                                    <th>Filename</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Corrected Data</td>
+                                    <td>{{ output_file }}</td>
+                                    <td>
+                                        <a href="{{ url_for('download_file', filename=output_file) }}" class="btn btn-primary">
+                                            <i class="fas fa-download"></i> Download
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% if error_file %}
+                                <tr>
+                                    <td>Error Log</td>
+                                    <td>{{ error_file }}</td>
+                                    <td>
+                                        <a href="{{ url_for('download_file', filename=error_file) }}" class="btn btn-secondary">
+                                            <i class="fas fa-file-alt"></i> Download
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endif %}
+                                {% if error_transactions_file %}
+                                <tr>
+                                    <td>Error Transactions</td>
+                                    <td>{{ error_transactions_file }}</td>
+                                    <td>
+                                        <a href="{{ url_for('download_file', filename=error_transactions_file) }}" class="btn btn-warning">
+                                            <i class="fas fa-exclamation-triangle"></i> Download
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    {% if not has_errors %}
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle"></i>
+                        <strong>Success!</strong> No errors were found in the data.
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="{{ url_for('home') }}" class="btn btn-outline-primary">
+                        <i class="fas fa-sync"></i> Process Another File
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    {{ custom_scripts|safe }}
+</body>
+</html> 

@@ -1,0 +1,5 @@
+Column1|^|Column2|^|Column3|^|Column4
+"1"|^|"CAP-GOWN PKG ULTRA NAVY 60""|^|"Paid"|^|"2023-05-01"
+"2"|^|"MONITOR DELL 32""|^|"Paid"|^|"2023-05-02"
+"3"|^|"ADB will apply SSL Certificates for WGU Complio "Splash pages""|^|"Pending"|^|"2023-05-03"
+"4"|^|"This item has multiple spaces   and   tabs	and	 embedded "quotes" too"|^|"Processing"|^|"2023-05-04" 

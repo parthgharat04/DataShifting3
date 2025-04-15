@@ -1,0 +1,111 @@
+DATA SHIFTING CORRECTION ERROR LOG
+==================================================
+
+Fixed multi-line transaction at lines 768-771:
+Line 768: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012273"|^|"2025-03-14-07:00"|^|"2025-03-14-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/08/2025 MSFT * E0300VQSQY 853.84 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants:
+Line 769: WesternGovernorsUniversity.onmicrosoft.com (WGU production)
+Line 770: iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant)
+Line 771: $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"853.84"|^|""
+Combined into: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012273"|^|"2025-03-14-07:00"|^|"2025-03-14-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/08/2025 MSFT * E0300VQSQY 853.84 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants: WesternGovernorsUniversity.onmicrosoft.com (WGU production) iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant) $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"853.84"|^|""
+--------------------------------------------------
+Fixed multi-line transaction at lines 772-775:
+Line 772: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012273"|^|"2025-03-14-07:00"|^|"2025-03-14-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/08/2025 MSFT * E0300VQR27 19.30 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants:
+Line 773: WesternGovernorsUniversity.onmicrosoft.com (WGU production)
+Line 774: iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant)
+Line 775: $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"19.3"|^|""
+Combined into: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012273"|^|"2025-03-14-07:00"|^|"2025-03-14-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/08/2025 MSFT * E0300VQR27 19.30 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants: WesternGovernorsUniversity.onmicrosoft.com (WGU production) iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant) $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"19.3"|^|""
+--------------------------------------------------
+Fixed multi-line transaction at lines 776-779:
+Line 776: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012273"|^|"2025-03-14-07:00"|^|"2025-03-14-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/08/2025 MSFT * E0300VQRSZ 6.43 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants:
+Line 777: WesternGovernorsUniversity.onmicrosoft.com (WGU production)
+Line 778: iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant)
+Line 779: $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"6.43"|^|""
+Combined into: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012273"|^|"2025-03-14-07:00"|^|"2025-03-14-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/08/2025 MSFT * E0300VQRSZ 6.43 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants: WesternGovernorsUniversity.onmicrosoft.com (WGU production) iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant) $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"6.43"|^|""
+--------------------------------------------------
+Fixed multi-line transaction at lines 780-783:
+Line 780: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012273"|^|"2025-03-14-07:00"|^|"2025-03-14-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/09/2025 MICROSOFT-G081653217 413.48 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants:
+Line 781: WesternGovernorsUniversity.onmicrosoft.com (WGU production)
+Line 782: iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant)
+Line 783: $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"413.48"|^|""
+Combined into: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012273"|^|"2025-03-14-07:00"|^|"2025-03-14-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/09/2025 MICROSOFT-G081653217 413.48 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants: WesternGovernorsUniversity.onmicrosoft.com (WGU production) iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant) $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"413.48"|^|""
+--------------------------------------------------
+Fixed multi-line transaction at lines 784-787:
+Line 784: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012273"|^|"2025-03-14-07:00"|^|"2025-03-14-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/08/2025 MSFT+*+E0300VQWXM 9.66 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants:
+Line 785: WesternGovernorsUniversity.onmicrosoft.com (WGU production)
+Line 786: iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant)
+Line 787: $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"9.66"|^|""
+Combined into: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012273"|^|"2025-03-14-07:00"|^|"2025-03-14-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/08/2025 MSFT+*+E0300VQWXM 9.66 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants: WesternGovernorsUniversity.onmicrosoft.com (WGU production) iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant) $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"9.66"|^|""
+--------------------------------------------------
+Fixed multi-line transaction at lines 929-930:
+Line 929: "Western Governors University"|^|"WGU"|^|"Approved"|^|"PC-10012314"|^|"2025-03-21-07:00"|^|"2025-03-21-07:00"|^|"1322 Regional Operations - Southeast"|^|"WGU Procurement Only"|^|"03/17/2025 IN *BAKED IN NASHVIL 4,171.50 USD"|^|"Sugar cookies with the WGU logo on them and individually wrapped.
+Line 930: This order is being requested by the Government Relations Director for Day at the Capitol"|^|"Meeting Food & Beverage"|^|"PO-100035740"|^|"Approved"|^|"0"|^|"3600"|^|""
+Combined into: "Western Governors University"|^|"WGU"|^|"Approved"|^|"PC-10012314"|^|"2025-03-21-07:00"|^|"2025-03-21-07:00"|^|"1322 Regional Operations - Southeast"|^|"WGU Procurement Only"|^|"03/17/2025 IN *BAKED IN NASHVIL 4,171.50 USD"|^|"Sugar cookies with the WGU logo on them and individually wrapped. This order is being requested by the Government Relations Director for Day at the Capitol"|^|"Meeting Food & Beverage"|^|"PO-100035740"|^|"Approved"|^|"0"|^|"3600"|^|""
+--------------------------------------------------
+Fixed multi-line transaction at lines 937-938:
+Line 937: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012319"|^|"2025-03-21-07:00"|^|"2025-03-21-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Ephox Corporation"|^|"02/25/2025 TINY TECHNOLOGIES 280.00 USD"|^|"FY25 Annual Payment for Tiny Technology/Ephox Corp
+Line 938: Will cover Dec2024 - Dec2025"|^|"Software"|^|"PO-100034204"|^|"Approved"|^|"0"|^|"280"|^|""
+Combined into: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012319"|^|"2025-03-21-07:00"|^|"2025-03-21-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Ephox Corporation"|^|"02/25/2025 TINY TECHNOLOGIES 280.00 USD"|^|"FY25 Annual Payment for Tiny Technology/Ephox Corp Will cover Dec2024 - Dec2025"|^|"Software"|^|"PO-100034204"|^|"Approved"|^|"0"|^|"280"|^|""
+--------------------------------------------------
+Fixed multi-line transaction at lines 1080-1082:
+Line 1080: "Western Governors University"|^|"WGU"|^|"Approved"|^|"PC-10012361"|^|"2025-03-26-07:00"|^|"2025-03-26-07:00"|^|"1314 Communications"|^|"WGU Procurement Only"|^|"03/10/2025 IN *TEE BOX 10,000.00 USD"|^|"WGU is sponsoring the 2025 ASU+GSV Summit (April 6-9 in San Diego) and will have several expenses coming through over the next month for food/beverage, hotel meeting space, A/V, etc. We have a good idea of how much we will spend but are padding this requisition to ensure that we can expense all items under it. 
+Line 1081: 
+Line 1082: Please ensure that the PO generated under the requisition stays open until the end of April so we can continue to use for any related post-conference expenses that we may incur."|^|"Miscellaneous Expenses"|^|"PO-100035897"|^|"Approved"|^|"0"|^|"10000"|^|""
+Combined into: "Western Governors University"|^|"WGU"|^|"Approved"|^|"PC-10012361"|^|"2025-03-26-07:00"|^|"2025-03-26-07:00"|^|"1314 Communications"|^|"WGU Procurement Only"|^|"03/10/2025 IN *TEE BOX 10,000.00 USD"|^|"WGU is sponsoring the 2025 ASU+GSV Summit (April 6-9 in San Diego) and will have several expenses coming through over the next month for food/beverage, hotel meeting space, A/V, etc. We have a good idea of how much we will spend but are padding this requisition to ensure that we can expense all items under it.   Please ensure that the PO generated under the requisition stays open until the end of April so we can continue to use for any related post-conference expenses that we may incur."|^|"Miscellaneous Expenses"|^|"PO-100035897"|^|"Approved"|^|"0"|^|"10000"|^|""
+--------------------------------------------------
+Fixed multi-line transaction at lines 1122-1125:
+Line 1122: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012386"|^|"2025-03-28-07:00"|^|"2025-03-28-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/19/2025 MSFT * E0600VL87C 60.07 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants:
+Line 1123: WesternGovernorsUniversity.onmicrosoft.com (WGU production)
+Line 1124: iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant)
+Line 1125: $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"60.07"|^|""
+Combined into: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012386"|^|"2025-03-28-07:00"|^|"2025-03-28-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/19/2025 MSFT * E0600VL87C 60.07 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants: WesternGovernorsUniversity.onmicrosoft.com (WGU production) iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant) $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"60.07"|^|""
+--------------------------------------------------
+Fixed multi-line transaction at lines 1126-1129:
+Line 1126: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012386"|^|"2025-03-28-07:00"|^|"2025-03-28-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/20/2025 MSFT+*+E0600VL87E 160.89 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants:
+Line 1127: WesternGovernorsUniversity.onmicrosoft.com (WGU production)
+Line 1128: iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant)
+Line 1129: $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"160.89"|^|""
+Combined into: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012386"|^|"2025-03-28-07:00"|^|"2025-03-28-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/20/2025 MSFT+*+E0600VL87E 160.89 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants: WesternGovernorsUniversity.onmicrosoft.com (WGU production) iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant) $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"160.89"|^|""
+--------------------------------------------------
+Fixed multi-line transaction at lines 1130-1133:
+Line 1130: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012386"|^|"2025-03-28-07:00"|^|"2025-03-28-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/20/2025 MSFT+*+E0600VL5MD 5.91 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants:
+Line 1131: WesternGovernorsUniversity.onmicrosoft.com (WGU production)
+Line 1132: iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant)
+Line 1133: $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"5.91"|^|""
+Combined into: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012386"|^|"2025-03-28-07:00"|^|"2025-03-28-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/20/2025 MSFT+*+E0600VL5MD 5.91 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants: WesternGovernorsUniversity.onmicrosoft.com (WGU production) iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant) $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"5.91"|^|""
+--------------------------------------------------
+Fixed multi-line transaction at lines 1134-1137:
+Line 1134: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012386"|^|"2025-03-28-07:00"|^|"2025-03-28-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/20/2025 MSFT+*+E0600VL5LU 660.67 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants:
+Line 1135: WesternGovernorsUniversity.onmicrosoft.com (WGU production)
+Line 1136: iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant)
+Line 1137: $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"660.67"|^|""
+Combined into: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012386"|^|"2025-03-28-07:00"|^|"2025-03-28-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/20/2025 MSFT+*+E0600VL5LU 660.67 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants: WesternGovernorsUniversity.onmicrosoft.com (WGU production) iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant) $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"660.67"|^|""
+--------------------------------------------------
+Fixed multi-line transaction at lines 1138-1141:
+Line 1138: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012386"|^|"2025-03-28-07:00"|^|"2025-03-28-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/20/2025 MSFT * E0600VL5ME 5.36 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants:
+Line 1139: WesternGovernorsUniversity.onmicrosoft.com (WGU production)
+Line 1140: iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant)
+Line 1141: $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"5.36"|^|""
+Combined into: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012386"|^|"2025-03-28-07:00"|^|"2025-03-28-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/20/2025 MSFT * E0600VL5ME 5.36 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants: WesternGovernorsUniversity.onmicrosoft.com (WGU production) iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant) $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"5.36"|^|""
+--------------------------------------------------
+Fixed multi-line transaction at lines 1142-1145:
+Line 1142: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012386"|^|"2025-03-28-07:00"|^|"2025-03-28-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/20/2025 MSFT * E0600VL2Y0 920.20 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants:
+Line 1143: WesternGovernorsUniversity.onmicrosoft.com (WGU production)
+Line 1144: iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant)
+Line 1145: $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"920.2"|^|""
+Combined into: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012386"|^|"2025-03-28-07:00"|^|"2025-03-28-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/20/2025 MSFT * E0600VL2Y0 920.20 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants: WesternGovernorsUniversity.onmicrosoft.com (WGU production) iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant) $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"920.2"|^|""
+--------------------------------------------------
+Fixed multi-line transaction at lines 1146-1149:
+Line 1146: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012386"|^|"2025-03-28-07:00"|^|"2025-03-28-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/20/2025 MSFT * E0600VL2XZ 171.60 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants:
+Line 1147: WesternGovernorsUniversity.onmicrosoft.com (WGU production)
+Line 1148: iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant)
+Line 1149: $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"171.6"|^|""
+Combined into: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012386"|^|"2025-03-28-07:00"|^|"2025-03-28-07:00"|^|"1220 Enterprise Systems (IT Operations)"|^|"Microsoft Corporation"|^|"03/20/2025 MSFT * E0600VL2XZ 171.60 USD"|^|"To cover all annual direct (credit card) charges for licenses on the following Azure tenants: WesternGovernorsUniversity.onmicrosoft.com (WGU production) iocollabsandbox.onmicrosoft.com (Infrastructure Operations Collaboration sandbox tenant) $45,000 estimate for full year, monthly invoices add up to about $3,700/month"|^|"Software"|^|"PO-100034183"|^|"Approved"|^|"0"|^|"171.6"|^|""
+--------------------------------------------------
+Fixed multi-line transaction at lines 1151-1155:
+Line 1151: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012386"|^|"2025-03-28-07:00"|^|"2025-03-28-07:00"|^|"1467 Production & Operations"|^|"WGU Procurement Only"|^|"03/24/2025 ELEVENLABS.IO 235.95 USD"|^|">This request is for five Creator licenses from ElevenLabs for use the by the Multimedia team in support of various courses and programs within Program Development. (https://elevenlabs.io/pricing)
+Line 1152: 
+Line 1153: >Licenses should be renewed annually.
+Line 1154: 
+Line 1155: >These licenses need to be purchased by procurement as I do not have a PCard."|^|"Content Development"|^|"PO-100035818"|^|"Approved"|^|"0"|^|"235.95"|^|""
+Combined into: "WGU Corporation"|^|"WGUCORP"|^|"Approved"|^|"PC-10012386"|^|"2025-03-28-07:00"|^|"2025-03-28-07:00"|^|"1467 Production & Operations"|^|"WGU Procurement Only"|^|"03/24/2025 ELEVENLABS.IO 235.95 USD"|^|">This request is for five Creator licenses from ElevenLabs for use the by the Multimedia team in support of various courses and programs within Program Development. (https://elevenlabs.io/pricing)  >Licenses should be renewed annually.  >These licenses need to be purchased by procurement as I do not have a PCard."|^|"Content Development"|^|"PO-100035818"|^|"Approved"|^|"0"|^|"235.95"|^|""
+--------------------------------------------------

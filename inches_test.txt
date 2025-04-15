@@ -1,0 +1,4 @@
+Column1|^|Column2|^|Column3
+"Value1"|^|"CAP-GOWN PKG ULTRA NAVY 60""|^|"Regular value"
+"Value2"|^|"NURSING GOWN PKG 54""|^|"Another value"
+"Value3"|^|"MONITOR DELL 32""|^|"Third value" 
