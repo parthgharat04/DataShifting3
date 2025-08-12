@@ -1,0 +1,14 @@
+# Production Environment Variables Template
+# Copy this file to .env and fill in actual values
+
+FLASK_ENV=production
+FLASK_DEBUG=False
+SECRET_KEY=change_this_to_secure_random_key_32_characters_minimum
+UPLOAD_FOLDER=/var/www/data_shifting/uploads
+OUTPUT_FOLDER=/var/www/data_shifting/outputs
+LOG_LEVEL=INFO
+MAX_FILE_SIZE=104857600
+
+# Optional: Customize these paths for your server
+# UPLOAD_FOLDER=/path/to/your/uploads
+# OUTPUT_FOLDER=/path/to/your/outputs
