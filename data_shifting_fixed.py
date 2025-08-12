@@ -1,52 +1,3 @@
-"""
-Data Shifting Correction Module
-
-This module provides advanced functionality to detect and fix data shifting issues
-in delimited text files. It handles complex scenarios including multi-line transactions,
-embedded quotes, and special character patterns.
-
-Key Features:
-- Intelligent multi-line transaction detection and combination
-- Advanced embedded quote handling (including inch measurements)
-- Robust column counting with quote-aware parsing
-- Comprehensive error logging and reporting
-- Support for various delimiters and text qualifiers
-- Handles edge cases like very long descriptions (up to 25 lines)
-
-Supported File Formats:
-- CSV files (.csv)
-- Text files (.txt)
-- Data files (.dat)
-- Tab-separated values (.tsv)
-
-Common Use Cases:
-- Fixing broken transactions in financial data
-- Repairing medical equipment descriptions
-- Correcting software specification files
-- Handling complex product catalogs
-- Processing multi-line address data
-
-Example Usage:
-    # Command line
-    python data_shifting.py input.csv output.csv
-    
-    # As a module
-    from data_shifting import fix_data_shifting
-    fix_data_shifting('input.csv', 'output.csv')
-    
-    # With error logging
-    fix_data_shifting(
-        'input.csv', 
-        'output.csv',
-        error_path='errors.log',
-        error_transactions_path='error_transactions.txt'
-    )
-
-Author: Enhanced Data Shifting Team
-Version: 2.0 (Enhanced Multi-line Support)
-License: MIT
-"""
-
 import re
 import argparse
 import sys
@@ -56,10 +7,7 @@ import os
 
 def parse_args():
     """Parse command line arguments."""
-    parser = argparse.ArgumentParser(
-        description='Advanced data shifting correction tool for delimited text files.',
-        epilog='For detailed help, use: python data_shifting.py --help'
-    )
+    parser = argparse.ArgumentParser(description='Correct data shifting in text files.')
     parser.add_argument('input_file', type=str, help='Path to the input text file', nargs='?')
     parser.add_argument('output_file', type=str, help='Path to the output corrected file', nargs='?')
     parser.add_argument('--error_file', type=str, help='Path to the error log file (default: input_file_errors.log)')
@@ -67,7 +15,6 @@ def parse_args():
     parser.add_argument('--delimiter', type=str, default='|^|', help='Column delimiter (default: |^|)')
     parser.add_argument('--qualifier', type=str, default='"', help='Text qualifier (default: ")')
     parser.add_argument('--test', action='store_true', help='Run built-in tests instead of processing files')
-    parser.add_argument('--help-detailed', action='store_true', help='Show comprehensive help information')
     return parser.parse_args()
 
 def detect_delimiter_and_qualifier(first_line):
@@ -262,83 +209,9 @@ def is_line_complete(line, delimiter, qualifier):
     
     return not in_quote
 
-def should_combine_lines(current_line, next_line, delimiter, qualifier):
-    """
-    Enhanced logic to determine if two lines should be combined.
-    This handles cases where the first line ends with an incomplete quoted field.
-    """
-    # Check if current line ends with an incomplete quoted field
-    current_ends_with_quote = current_line.rstrip().endswith(qualifier)
-    
-    # Check if next line starts with content that could be part of a quoted field
-    next_starts_with_content = next_line.strip() and not next_line.strip().startswith(qualifier)
-    
-    # Check if current line has fewer columns than expected (indicating incomplete transaction)
-    current_columns = count_columns(current_line, delimiter, qualifier)
-    
-    # If current line ends with a quote and next line has content, likely should combine
-    if current_ends_with_quote and next_starts_with_content:
-        return True
-    
-    # If current line has very few columns, it's likely incomplete
-    if current_columns < 10:  # Arbitrary threshold - adjust as needed
-        return True
-    
-    return False
-
 def fix_data_shifting(input_path, output_path, error_path=None, error_transactions_path=None, delimiter=None, qualifier=None):
     """
-    Enhanced fix_data_shifting function with robust multi-line detection and embedded quote handling.
-    
-    This function processes delimited text files to fix data shifting issues caused by:
-    - Newlines embedded within quoted fields
-    - Multi-line transactions that span multiple rows
-    - Embedded quotes within text fields
-    - Special characters like inch marks that break parsing
-    
-    The enhanced logic can handle:
-    - Transactions spanning up to 25 lines
-    - Complex descriptions (medical equipment, software specs, etc.)
-    - Embedded quotes and inch measurements
-    - Various delimiter and qualifier combinations
-    
-    Args:
-        input_path (str or Path): Path to the input text file
-        output_path (str or Path): Path to the output corrected file
-        error_path (str or Path, optional): Path to the error log file
-        error_transactions_path (str or Path, optional): Path to save error transactions
-        delimiter (str, optional): Column delimiter (default: auto-detected or '|^|')
-        qualifier (str, optional): Text qualifier (default: auto-detected or '"')
-    
-    Returns:
-        None: Writes output files to specified paths
-    
-    Raises:
-        FileNotFoundError: If input file doesn't exist
-        Exception: For other processing errors (logged but doesn't crash)
-    
-    Example:
-        # Basic usage
-        fix_data_shifting('input.csv', 'output.csv')
-        
-        # With error logging
-        fix_data_shifting(
-            'input.csv', 
-            'output.csv',
-            error_path='errors.log',
-            error_transactions_path='error_transactions.txt'
-        )
-        
-        # With custom delimiter
-        fix_data_shifting('input.txt', 'output.txt', delimiter='|', qualifier='"')
-    
-    Features:
-        - Auto-detects delimiter and qualifier if not specified
-        - Handles UTF-8 and Latin-1 encodings
-        - Combines multi-line transactions intelligently
-        - Preserves data integrity while fixing structure
-        - Comprehensive error logging and reporting
-        - Handles edge cases like very long descriptions
+    Enhanced fix_data_shifting function with improved multi-line detection and embedded quote handling.
     """
     # Initialize error log list and error transactions
     error_logs = []
@@ -408,16 +281,10 @@ def fix_data_shifting(input_path, output_path, error_path=None, error_transactio
             corrected_lines.append(current_line)
             i += 1
         else:
-            # Enhanced multi-line detection using multiple strategies
+            # Enhanced multi-line detection using both column count and quote balance
             line_complete = is_line_complete(current_line, delimiter, qualifier)
-            should_combine = False
             
-            # Check if we should combine with next line
-            if i + 1 < len(lines):
-                next_line = lines[i + 1].rstrip('\r\n')
-                should_combine = should_combine_lines(current_line, next_line, delimiter, qualifier)
-            
-            if (not line_complete or should_combine) and i + 1 < len(lines):
+            if not line_complete and i + 1 < len(lines):
                 # Start building a combined line
                 combined_line = current_line
                 next_index = i + 1
@@ -425,14 +292,7 @@ def fix_data_shifting(input_path, output_path, error_path=None, error_transactio
                 error_transaction_lines = [current_line]
                 
                 # Continue adding lines until we have matching column count or no more lines
-                # Increased limit for very long descriptions (like medical equipment)
-                max_combine_attempts = 25  # Increased from 10 to handle edge cases
-                combine_attempts = 0
-                
-                while (next_index < len(lines) and 
-                       count_columns(combined_line, delimiter, qualifier) != header_count and
-                       combine_attempts < max_combine_attempts):
-                    
+                while next_index < len(lines) and count_columns(combined_line, delimiter, qualifier) != header_count:
                     next_line = lines[next_index].rstrip('\r\n')
                     original_lines.append(f"Line {next_index+1}: {next_line}")
                     error_transaction_lines.append(next_line)
@@ -445,7 +305,6 @@ def fix_data_shifting(input_path, output_path, error_path=None, error_transactio
                         break
                     
                     next_index += 1
-                    combine_attempts += 1
                 
                 # If we now have the correct count, consider it fixed
                 if count_columns(combined_line, delimiter, qualifier) == header_count:
@@ -455,49 +314,8 @@ def fix_data_shifting(input_path, output_path, error_path=None, error_transactio
                     error_logs.append(f"Combined into: {combined_line}")
                     error_logs.append("-" * 50)
                 else:
-                    # Enhanced logic: Check if we're very close to completion
-                    current_columns = count_columns(combined_line, delimiter, qualifier)
-                    if current_columns >= header_count * 0.8:  # If we have at least 80% of expected columns
-                        # Try to complete the transaction by looking for the closing pattern
-                        if combined_line.rstrip().endswith(qualifier):
-                            # We have an incomplete quoted field, try to find the rest
-                            remaining_lines = []
-                            search_index = next_index
-                            search_attempts = 0
-                            max_search = 10  # Additional search limit
-                            
-                            while (search_index < len(lines) and 
-                                   search_attempts < max_search and
-                                   count_columns(combined_line, delimiter, qualifier) != header_count):
-                                
-                                search_line = lines[search_index].rstrip('\r\n')
-                                remaining_lines.append(f"Line {search_index+1}: {search_line}")
-                                
-                                # Check if this line completes the transaction
-                                test_combined = combined_line + ' ' + search_line
-                                if count_columns(test_combined, delimiter, qualifier) == header_count:
-                                    # Found completion!
-                                    combined_line = test_combined
-                                    next_index = search_index
-                                    original_lines.extend(remaining_lines)
-                                    error_transaction_lines.extend([search_line])
-                                    break
-                                
-                                search_index += 1
-                                search_attempts += 1
-                            
-                            # If we found completion, add it
-                            if count_columns(combined_line, delimiter, qualifier) == header_count:
-                                corrected_lines.append(combined_line)
-                                error_logs.append(f"Fixed extended multi-line transaction at lines {i+1}-{next_index+1}:")
-                                error_logs.extend(original_lines)
-                                error_logs.append(f"Combined into: {combined_line}")
-                                error_logs.append("-" * 50)
-                                i = next_index + 1
-                                continue
-                    
-                    # If we still couldn't fix it, log the error
-                    error_msg = f"Error: Could not fix multi-line transaction starting at line {i+1} (has {current_columns} columns, expected {header_count})"
+                    # Couldn't fix it
+                    error_msg = f"Error: Could not fix multi-line transaction starting at line {i+1} (has {column_count} columns, expected {header_count})"
                     print(error_msg)
                     error_logs.append(error_msg)
                     error_logs.extend(original_lines)
@@ -675,78 +493,6 @@ def write_error_transactions(error_transactions_path, error_transactions):
     except Exception as e:
         print(f"Error writing error transactions: {e}")
 
-def show_help():
-    """Display comprehensive help information about the data shifting module."""
-    help_text = """
-╔══════════════════════════════════════════════════════════════════════════════╗
-║                    DATA SHIFTING CORRECTION MODULE                           ║
-║                              Version 2.0                                    ║
-╚══════════════════════════════════════════════════════════════════════════════╝
-
-OVERVIEW:
-This module fixes data shifting issues in delimited text files by intelligently
-detecting and combining multi-line transactions, handling embedded quotes, and
-restoring proper column alignment.
-
-KEY FEATURES:
-• Advanced Multi-line Detection: Combines broken transactions spanning up to 25 lines
-• Intelligent Quote Handling: Processes embedded quotes and inch measurements
-• Robust Column Counting: Accurate parsing with quote-aware logic
-• Comprehensive Error Logging: Detailed reporting of all fixes and issues
-• Auto-detection: Automatically detects delimiters and text qualifiers
-• Multi-format Support: Handles CSV, TXT, DAT, and TSV files
-
-COMMON PROBLEMS SOLVED:
-1. Newlines within quoted fields breaking column alignment
-2. Multi-line product descriptions spanning multiple rows
-3. Complex medical equipment specifications
-4. Software deployment details with embedded quotes
-5. Address data with line breaks in description fields
-
-USAGE EXAMPLES:
-
-Command Line:
-  python data_shifting.py input.csv output.csv
-  python data_shifting.py input.txt output.txt --delimiter "|" --qualifier '"'
-  python data_shifting.py input.csv output.csv --error_file errors.log
-
-As a Module:
-  from data_shifting import fix_data_shifting
-  fix_data_shifting('input.csv', 'output.csv')
-  fix_data_shifting('input.txt', 'output.txt', delimiter='|', qualifier='"')
-
-PARAMETERS:
-  input_file: Source file with data shifting issues
-  output_file: Destination for corrected data
-  --delimiter: Column separator (default: |^|)
-  --qualifier: Text qualifier (default: ")
-  --error_file: Path for error logging
-  --error_transactions_file: Path for problematic data
-  --test: Run built-in test suite
-
-SUPPORTED DELIMITERS:
-  |^| (default), |, ,, ;, tab
-
-SUPPORTED QUALIFIERS:
-  " (default), '
-
-ERROR HANDLING:
-The module generates three output files:
-1. Corrected data file (main output)
-2. Error log (detailed processing information)
-3. Error transactions (problematic data for review)
-
-ADVANCED FEATURES:
-• Handles transactions up to 25 lines long
-• Converts inch marks (") to " inches" for clarity
-• Processes embedded quotes intelligently
-• Maintains data integrity during fixes
-• Supports multiple file encodings (UTF-8, Latin-1)
-
-For more information, see the README.md file or run: python data_shifting.py --test
-"""
-    print(help_text)
-
 def run_tests():
     """Run built-in tests to verify the functionality."""
     print("Running built-in tests...")
@@ -771,20 +517,12 @@ def run_tests():
     count = count_columns(test_line, '|^|', '"')
     print(f"Test 4 - Column counting: {count}")
     
-    # Test 5: Line combination logic
-    current_line = '"Field1"|^|"Field2"|^|"Incomplete'
-    next_line = 'description continues here"|^|"Field3"'
-    should_combine = should_combine_lines(current_line, next_line, '|^|', '"')
-    print(f"Test 5 - Should combine lines: {should_combine}")
-    
     print("Tests completed!")
 
 if __name__ == '__main__':
     args = parse_args()
     
-    if args.help_detailed:
-        show_help()
-    elif args.test:
+    if args.test:
         run_tests()
     elif args.input_file and args.output_file:
         fix_data_shifting(
@@ -796,6 +534,5 @@ if __name__ == '__main__':
             args.qualifier
         )
     else:
-        print("Usage: python data_shifting.py input_file output_file [options]")
-        print("Or run tests: python data_shifting.py --test")
-        print("For detailed help: python data_shifting.py --help-detailed")
+        print("Usage: python data_shifting_fixed.py input_file output_file [options]")
+        print("Or run tests: python data_shifting_fixed.py --test")

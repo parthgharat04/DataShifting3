@@ -1,0 +1,45 @@
+Fixed multi-line transaction at lines 2-13:
+Line 2: "SU-1000523"|^|"Net 30"|^|"United States of America"|^|"PA"|^|"Philadelphia"|^|"19178"|^|""|^|""|^|"SUPPLIER_INVOICE_LINE-3-556942"|^|"2025-07-16-07:00"|^|"3"|^|"Each"|^|"PO-100037095 - Line 50"|^|""|^|"WGU Corporation"|^|"WGUCORP"|^|"Managed"|^|"Administration"|^|"1115 Facilities Management"|^|"Laerdal Medical Corporation"|^|"PO-100037095"|^|"2025-07-13T13:15:11.336-07:00"|^|"Approved"|^|"McKenzie Smartt (436204)"|^|"2025-07-11T13:40:29.085-07:00"|^|"2025-07-01-07:00"|^|"SI-1150776"|^|"2025/2000033420"|^|"2025-02-07-08:00"|^|"325-05050B
+Line 3: Nursing Anne Manikin Dark
+Line 4: 1 Adult, Female, Full-Body Manikin, 1
+Line 5: Female Multi-Venous IV Training Arm-
+Line 6: Left, 1 Female Blood Pressure
+Line 7: Training Arm-Right, 1 Blood Pressure
+Line 8: Cuff, 1 Male Genitalia, 1 Female
+Line 9: Genitalia, 3 Urinary Connector Valves,
+Line 10: 3 Anal Connector Valves, 4 Clamps, 1
+Line 11: 100cc Slip Tip Syringe, 1 Can Manikin
+Line 12: Lubricant, 1 Hospital Gown and
+Line 13: Includes Gift Box"|^|""|^|"Lab Equipment"|^|"18315.42"|^|"0"|^|"0"|^|"0"|^|""|^|""|^|""|^|""|^|""|^|""|^|""|^|""|^|"161647.26"|^|"Paid"
+Combined into: "SU-1000523"|^|"Net 30"|^|"United States of America"|^|"PA"|^|"Philadelphia"|^|"19178"|^|""|^|""|^|"SUPPLIER_INVOICE_LINE-3-556942"|^|"2025-07-16-07:00"|^|"3"|^|"Each"|^|"PO-100037095 - Line 50"|^|""|^|"WGU Corporation"|^|"WGUCORP"|^|"Managed"|^|"Administration"|^|"1115 Facilities Management"|^|"Laerdal Medical Corporation"|^|"PO-100037095"|^|"2025-07-13T13:15:11.336-07:00"|^|"Approved"|^|"McKenzie Smartt (436204)"|^|"2025-07-11T13:40:29.085-07:00"|^|"2025-07-01-07:00"|^|"SI-1150776"|^|"2025/2000033420"|^|"2025-02-07-08:00"|^|"325-05050B Nursing Anne Manikin Dark 1 Adult, Female, Full-Body Manikin, 1 Female Multi-Venous IV Training Arm- Left, 1 Female Blood Pressure Training Arm-Right, 1 Blood Pressure Cuff, 1 Male Genitalia, 1 Female Genitalia, 3 Urinary Connector Valves, 3 Anal Connector Valves, 4 Clamps, 1 100cc Slip Tip Syringe, 1 Can Manikin Lubricant, 1 Hospital Gown and Includes Gift Box"|^|""|^|"Lab Equipment"|^|"18315.42"|^|"0"|^|"0"|^|"0"|^|""|^|""|^|""|^|""|^|""|^|""|^|""|^|""|^|"161647.26"|^|"Paid"
+--------------------------------------------------
+Fixed multi-line transaction at lines 14-25:
+Line 14: "SU-1000523"|^|"Net 30"|^|"United States of America"|^|"PA"|^|"Philadelphia"|^|"19178"|^|""|^|""|^|"SUPPLIER_INVOICE_LINE-3-556946"|^|"2025-07-16-07:00"|^|"3"|^|"Each"|^|"PO-100037095 - Line 5"|^|""|^|"WGU Corporation"|^|"WGUCORP"|^|"Managed"|^|"Administration"|^|"1115 Facilities Management"|^|"Laerdal Medical Corporation"|^|"PO-100037095"|^|"2025-07-13T13:15:11.336-07:00"|^|"Approved"|^|"McKenzie Smartt (436204)"|^|"2025-07-11T13:40:29.085-07:00"|^|"2025-07-01-07:00"|^|"SI-1150776"|^|"2025/2000033420"|^|"2025-02-07-08:00"|^|"300-05050T
+Line 15: Nursing Kelly Manikin Medium
+Line 16: Includes: 1 Adult, Male, Full-Body
+Line 17: Manikin, 1 Male Multi-Venous IV
+Line 18: Training Arm-Right, 1 Male Blood
+Line 19: Pressure Training Arm-Left, 1 Blood
+Line 20: Pressure Cuff, 1 Male Genitalia, 1
+Line 21: Female Genitalia, 3 Urinary Connector
+Line 22: Valves, 3 Anal Connector Valves, 4
+Line 23: Clamps, 1 100cc Slip Tip Syringe, 1
+Line 24: Can Manikin Lubricant, 1 Hospital
+Line 25: Gown and Includes Gift Box"|^|""|^|"Lab Equipment"|^|"18315.42"|^|"0"|^|"0"|^|"0"|^|""|^|""|^|""|^|""|^|""|^|""|^|""|^|""|^|"161647.26"|^|"Paid"
+Combined into: "SU-1000523"|^|"Net 30"|^|"United States of America"|^|"PA"|^|"Philadelphia"|^|"19178"|^|""|^|""|^|"SUPPLIER_INVOICE_LINE-3-556946"|^|"2025-07-16-07:00"|^|"3"|^|"Each"|^|"PO-100037095 - Line 5"|^|""|^|"WGU Corporation"|^|"WGUCORP"|^|"Managed"|^|"Administration"|^|"1115 Facilities Management"|^|"Laerdal Medical Corporation"|^|"PO-100037095"|^|"2025-07-13T13:15:11.336-07:00"|^|"Approved"|^|"McKenzie Smartt (436204)"|^|"2025-07-11T13:40:29.085-07:00"|^|"2025-07-01-07:00"|^|"SI-1150776"|^|"2025/2000033420"|^|"2025-02-07-08:00"|^|"300-05050T Nursing Kelly Manikin Medium Includes: 1 Adult, Male, Full-Body Manikin, 1 Male Multi-Venous IV Training Arm-Right, 1 Male Blood Pressure Training Arm-Left, 1 Blood Pressure Cuff, 1 Male Genitalia, 1 Female Genitalia, 3 Urinary Connector Valves, 3 Anal Connector Valves, 4 Clamps, 1 100cc Slip Tip Syringe, 1 Can Manikin Lubricant, 1 Hospital Gown and Includes Gift Box"|^|""|^|"Lab Equipment"|^|"18315.42"|^|"0"|^|"0"|^|"0"|^|""|^|""|^|""|^|""|^|""|^|""|^|""|^|""|^|"161647.26"|^|"Paid"
+--------------------------------------------------
+Fixed multi-line transaction at lines 26-37:
+Line 26: "SU-1000221"|^|"Net 60"|^|"United States of America"|^|"UT"|^|"Salt Lake City"|^|"84127-0957"|^|""|^|""|^|"SUPPLIER_INVOICE_LINE-3-564347"|^|""|^|"0"|^|""|^|"PO-100038624 - Line 1"|^|""|^|"WGU Corporation"|^|"WGUCORP"|^|"Managed"|^|"All Cost Centers"|^|"1220 Software"|^|"CVE Technologies Group, Inc."|^|"PO-100038624"|^|"2025-07-21T08:53:50.267-07:00"|^|"Approved"|^|""|^|"2025-07-28T10:19:26.544-07:00"|^|"2025-07-25-07:00"|^|"SI-1152772"|^|"52-107703"|^|"2025-07-25-07:00"|^|"Software NGFW Credits to deploy VM-Series, CN-Series,
+Line 27: Subscription Services, and Virtual Panorama to manage
+Line 28: Software Firewalls for:
+Line 29: Device Name Serial Number
+Line 30: AWS-PA-02
+Line 31: us-East-1 7955000538950
+Line 32: _
+Line 33: AWS-PA-01
+Line 34: us-East-1 7955000538947
+Line 35: _
+Line 36: Azure-PA-02-West 7957000386137
+Line 37: Azure-PA-01-East 7957000339212"|^|""|^|"Software Maintenance"|^|"21327.06"|^|"0"|^|"0"|^|"0"|^|""|^|""|^|""|^|""|^|""|^|""|^|""|^|""|^|"21327.06"|^|"Unpaid"
+Combined into: "SU-1000221"|^|"Net 60"|^|"United States of America"|^|"UT"|^|"Salt Lake City"|^|"84127-0957"|^|""|^|""|^|"SUPPLIER_INVOICE_LINE-3-564347"|^|""|^|"0"|^|""|^|"PO-100038624 - Line 1"|^|""|^|"WGU Corporation"|^|"WGUCORP"|^|"Managed"|^|"All Cost Centers"|^|"1220 Software"|^|"CVE Technologies Group, Inc."|^|"PO-100038624"|^|"2025-07-21T08:53:50.267-07:00"|^|"Approved"|^|""|^|"2025-07-28T10:19:26.544-07:00"|^|"2025-07-25-07:00"|^|"SI-1152772"|^|"52-107703"|^|"2025-07-25-07:00"|^|"Software NGFW Credits to deploy VM-Series, CN-Series, Subscription Services, and Virtual Panorama to manage Software Firewalls for: Device Name Serial Number AWS-PA-02 us-East-1 7955000538950 _ AWS-PA-01 us-East-1 7955000538947 _ Azure-PA-02-West 7957000386137 Azure-PA-01-East 7957000339212"|^|""|^|"Software Maintenance"|^|"21327.06"|^|"0"|^|"0"|^|"0"|^|""|^|""|^|""|^|""|^|""|^|""|^|""|^|""|^|"21327.06"|^|"Unpaid"
+--------------------------------------------------
